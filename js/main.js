@@ -34,5 +34,24 @@ $('document').ready( function() {
                 `);
             }
         });
-    })
+    });
+
+    $('#search-jokes').on('keypress', function(event) {
+        if (event.which == 13) {
+            var userSearch = $('#search-jokes').val(); // get the user search string
+
+            $('#search-jokes').val(''); // empty input
+
+            $.ajax({
+                url: 'https://api.chucknorris.io/jokes/search',
+                data: {
+                    query: userSearch,
+                },
+                method: 'GET',
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+    });
 });
