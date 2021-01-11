@@ -25,6 +25,11 @@ h1 {
     line-height: 80px;
 }
 
+h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 main {
     min-height: calc(100vh - 80px);
     background-color: #bbe4e4;

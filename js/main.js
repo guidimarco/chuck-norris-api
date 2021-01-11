@@ -1,12 +1,12 @@
 $('document').ready( function() {
 
-    // get all the category
+    // api GET all the category
     $.ajax({
         url: 'https://api.chucknorris.io/jokes/categories',
         method: 'GET',
         success: function(data) {
             data.forEach( (current_category) => {
-                console.log(current_category);
+                // console.log(current_category);
                 $('#jokes-category').append('<option value=' + current_category + '>' + current_category + '</option>')
             });
 
@@ -16,6 +16,23 @@ $('document').ready( function() {
 
     // get the change of the select
     $('#jokes-category').change(function() {
-        console.log("preso");
+
+        // console.log($(this).val());
+
+        // api GET the category jokes
+        $.ajax({
+            url: 'https://api.chucknorris.io/jokes/random',
+            data: {
+                category: $(this).val(),
+            },
+            method: 'GET',
+            success: function(data) {
+                // console.log(data.value);
+                $('.jokes-container').empty();
+                $('.jokes-container').append(`
+                    <p>${data.value}</p>
+                `);
+            }
+        });
     })
 });
