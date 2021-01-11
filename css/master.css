@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, "sans serif";
+}
+
+.container {
+    width: 90%;
+    max-width: 1170px;
+    margin: auto;
+}
+
+header {
+    height: 80px;
+    background-color: #394a4a;
+    color: #fff;
+}
+
+h1 {
+    font-size: 26px;
+    line-height: 80px;
+}
+
+main {
+    min-height: calc(100vh - 80px);
+    background-color: #bbe4e4;
+}
+
+#chuck-jokes {
+    padding-top: 40px;
+}
