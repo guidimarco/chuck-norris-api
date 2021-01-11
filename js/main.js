@@ -49,7 +49,17 @@ $('document').ready( function() {
                 },
                 method: 'GET',
                 success: function(data) {
-                    console.log(data);
+                    var total = data.total; // total jokes
+                    var jokes = data.result; // jokes
+
+                    var index = Math.floor(Math.random() * total);
+
+                    // select a random jokes
+                    // console.log(jokes[index]);
+                    $('.jokes-container').empty();
+                    $('.jokes-container').append(`
+                        <p>${jokes[index].value}</p>
+                    `);
                 }
             });
         }
